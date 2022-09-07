@@ -1,0 +1,192 @@
+/* 
+    Responsive CSS:
+        + Using to construct CSS for responsive CSS of Web Page in many device: Mobile/Tablet/PC...
+*/
+
+/* Mobile and Tablet */
+@media (max-width: 1023px) {
+    :root {
+        --header-height: 7rem;
+        --navbar-height: 0rem;
+    }
+
+    .hide-on-mobile-tablet {
+        display: none !important;
+    }
+
+    #app-header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 10000;
+    }
+
+    #app-header__container-search-form-history,
+    #app-header__container-search-selection-list {
+        z-index: 998;
+    }
+
+    #app-header__container-cart-wrap,
+    #app-header__container-logo-link {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .app-header__container-cart-wrap-items {
+        position: fixed;
+        right: 0;
+        top: var(--header-height);
+        width: 100%;
+        /* padding: 0 calc((100% - 644px) / 2); */
+    }
+
+    .app-header__container-cart-wrap-items::after {
+        display: none;
+    }
+
+    #app-header__container-cart-wrap-items-buying-list::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .app-header__sort-bar-list {
+        display: flex;
+    }
+
+    #mobile-category {
+        display: block;
+    }
+
+    #app-container {
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+
+    .app-container__products-link-item-price-current {
+        font-weight: var(--f-weight-400);
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none !important;
+    }
+
+    #app-header__container {
+        margin: 0;
+    }
+
+    #app-header__container-cart {
+        width: 8.8rem;
+    }
+
+    #app-header__container-cart-wrap-items-buying-list {
+        max-height: 20vh;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    #app-header__container {
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    #app-header__container-logo {
+        width: 14rem;
+    }
+
+    #app-header__container-cart,
+    #app-header__container-logo-link {
+        width: unset;
+    }
+
+    #app-header__container-logo-link {
+        margin: 0;
+    }
+
+    @keyframes searchMobileSideIn {
+        from {
+            opacity: 0;
+            top: calc(var(--header-height) / 2);
+        } to {
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+
+    .app-header__container-mobile-search-icon {
+        display: block;
+    }
+
+    #app-header__container-search {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        padding: 0 1.6rem;
+        height: var(--header-sort-bar-height);
+        box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
+        animation: searchMobileSideIn 0.2s linear;
+        -webkit-animation: searchMobileSideIn 0.2s linear;
+        z-index: 1;
+        display: none;
+    }
+
+    #app-header__container-search-form-history {
+        position: fixed;
+        top: calc(var(--header-height) + var(--header-sort-bar-height));
+        left: 0;
+        width: 100%;
+        box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
+    }
+
+    .app-header__mobile-checkbox:checked ~ #app-header__container-search {
+        display: flex;
+    }
+
+    .app-container--pd {
+        margin: 0;
+        padding: 2.8rem 0;
+    }
+
+    #app-header__container-cart-wrap-items-buying-list {
+        max-height: 28vh;
+    }
+
+    .app-container__pagination-list-item {
+        margin: 0 0.4rem;
+    }
+
+    .app-container__pagination-list-item-link {
+        font-size: var(--f-size-17);
+    }
+
+    .app-container__products-link-item-favorite {
+        left: -0.3rem;
+    }
+
+    .app-footer__content {
+        padding: 1.6rem 1.4rem;
+    }
+
+    .app-footer__container-title {
+        text-align: center;
+    }
+
+    .app-footer__container-list-item-link,
+    .app-footer__container-dload-applications {
+        justify-content: center;
+    }
+
+    .app-footer__container-dload-applications-images-link {
+        padding: 0.8rem 1.6rem;
+    }
+
+    .app-footer__copyright-container-text {
+        font-size: var(--f-size-13);
+    }
+}
