@@ -66,7 +66,7 @@
 }
 
 /* Tablet */
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 740px) and (max-width: 1024px) {
     .hide-on-tablet {
         display: none !important;
     }
@@ -81,6 +81,10 @@
 
     #app-header__container-cart-wrap-items-buying-list {
         max-height: 20vh;
+    }
+
+    .app-container__filter-btn {
+        min-width: 9rem;
     }
 }
 
